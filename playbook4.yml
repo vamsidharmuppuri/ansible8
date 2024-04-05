@@ -1,0 +1,13 @@
+---
+- name: Copy files to remote servers
+  hosts: all
+  tasks:
+    - name: Copy files
+      copy:
+        src: /etc/passwd
+        dest: /tmp
+        owner: root
+        group: Anusha
+        mode: 770
+
+...

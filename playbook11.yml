@@ -1,0 +1,15 @@
+---
+- name: Install uninstall and upgrade s/w apps
+  hosts: all
+  tasks:
+    - name: Install/uninstall/upgrade multiple s/w apps
+      apt:
+        name: "{{item.a}}"
+        state: "{{item.b}}"
+        update_cache: "{{item.c}}"
+      with_items:
+        - {a: tree,b: present,c: no}
+        - {a: openjdk-11-jdk,b: absent,c: no}
+        - {a: maven,b: latest,c: yes}
+...
+

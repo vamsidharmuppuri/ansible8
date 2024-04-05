@@ -1,0 +1,6 @@
+---
+- name: Configure apache2
+  hosts: all
+  tasks:
+    - name: Call child playbook
+      include_tasks: install.yml
